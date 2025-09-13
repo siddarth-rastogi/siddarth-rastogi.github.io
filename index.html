@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddarth Rastogi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0d0d12;
+            color: #f0f0f0;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .hero-particle-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .hero-particle {
+            position: absolute;
+            background-color: rgba(0, 191, 255, 0.5); /* Cyan */
+            border-radius: 50%;
+            pointer-events: none;
+            will-change: transform, opacity;
+            transition: transform 0.1s ease-out;
+            animation: move-particles 15s infinite ease-in-out;
+        }
+
+        @keyframes move-particles {
+            0% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.05); }
+            100% { transform: translateY(0) scale(1); }
+        }
+
+        .research-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .research-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 191, 255, 0.15);
+        }
+
+        .research-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 191, 255, 0.2) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .research-card:hover::after {
+            opacity: 1;
+        }
+
+        .skill-node {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .skill-node:hover {
+            transform: scale(1.1);
+            color: #00bfff;
+        }
+
+        .publication-item {
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .publication-item:hover {
+            transform: translateX(8px);
+            box-shadow: -8px 0 15px rgba(0, 191, 255, 0.1);
+        }
+
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-200">
+
+    <!-- Hero Section -->
+    <header class="h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="hero-particle-container"></div>
+        <div class="z-10 text-center px-4">
+            <h1 class="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tight text-white animate-pulse">
+                Siddarth Rastogi
+            </h1>
+            <p class="mt-4 text-sm sm:text-xl md:text-2xl font-light text-gray-400">
+                Building the architecture for tomorrow's quantum computing.
+            </p>
+        </div>
+        <nav class="absolute top-0 right-0 p-8 z-20">
+            <a href="#research" class="text-sm md:text-base text-gray-400 hover:text-cyan-400 transition-colors duration-300 mx-2 md:mx-4">Research</a>
+            <a href="#skills" class="text-sm md:text-base text-gray-400 hover:text-cyan-400 transition-colors duration-300 mx-2 md:mx-4">Skills</a>
+            <a href="#publications" class="text-sm md:text-base text-gray-400 hover:text-cyan-400 transition-colors duration-300 mx-2 md:mx-4">Publications</a>
+            <a href="#contact" class="text-sm md:text-base text-gray-400 hover:text-cyan-400 transition-colors duration-300 mx-2 md:mx-4">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Research Section -->
+    <section id="research" class="py-16 md:py-24 max-w-7xl mx-auto px-6 md:px-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-center mb-12 text-white">Quantum Foundry</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="research-card bg-[#14141e] rounded-xl p-8 shadow-lg border border-gray-800">
+                <div class="flex items-center space-x-4 mb-4">
+                    <div class="w-12 h-12 flex-shrink-0 bg-cyan-600 rounded-full flex items-center justify-center text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.25 7.5l-.57.86a2.25 2.25 0 01-1.95 1.14H4.5a2.25 2.25 0 00-1.95 1.14L2.25 12m18 0l-.57-.86A2.25 2.25 0 0017.25 9.5H4.5a2.25 2.25 0 01-1.95-1.14L2.25 6.5m18 0l-.57.86a2.25 2.25 0 01-1.95 1.14H4.5a2.25 2.25 0 00-1.95 1.14L2.25 12m18 0l-.57-.86A2.25 2.25 0 0017.25 9.5H4.5a2.25 2.25 0 01-1.95-1.14L2.25 6.5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Silicon Quantum Dot Devices</h3>
+                </div>
+                <p class="text-gray-400 text-sm md:text-base leading-relaxed">Pioneering the fabrication of double quantum dot structures in silicon for building scalable spin-qubit architectures, utilizing advanced lithography and cryogenic measurement techniques.</p>
+            </div>
+            <div class="research-card bg-[#14141e] rounded-xl p-8 shadow-lg border border-gray-800">
+                <div class="flex items-center space-x-4 mb-4">
+                    <div class="w-12 h-12 flex-shrink-0 bg-fuchsia-600 rounded-full flex items-center justify-center text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 16a6 6 0 110-12 6 6 0 010 12z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Cryogenic System Integration</h3>
+                </div>
+                <p class="text-gray-400 text-sm md:text-base leading-relaxed">Expert in operating cryogenic setups at sub-millikelvin temperatures for precise device characterization and low temperature physics, ensuring optimal conditions for quantum device analysis.</p>
+            </div>
+            <div class="research-card bg-[#14141e] rounded-xl p-8 shadow-lg border border-gray-800">
+                <div class="flex items-center space-x-4 mb-4">
+                    <div class="w-12 h-12 flex-shrink-0 bg-lime-600 rounded-full flex items-center justify-center text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-4m-4 4l-4-4m4 4v2m-6-15h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2a2 2 0 012-2zM15 11h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2a2 2 0 012-2zM6 6h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Nanostructure Collaboration</h3>
+                </div>
+                <p class="text-gray-400 text-sm md:text-base leading-relaxed">Collaborated with IIT Bombay and TIFR on GaAs/AlGaAs and Bilayer Graphene quantum dot devices, exploring single-electron transport and charge stability.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 md:py-24 max-w-5xl mx-auto px-6 md:px-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-center mb-12 text-white">My Toolkit</h2>
+        <div class="flex flex-wrap justify-center gap-6 md:gap-8 text-center">
+            <div class="skill-node bg-[#14141e] rounded-full p-4 md:p-6 shadow-xl border border-gray-800">
+                <p class="text-sm md:text-base font-semibold text-white">Lithography</p>
+            </div>
+            <div class="skill-node bg-[#14141e] rounded-full p-4 md:p-6 shadow-xl border border-gray-800">
+                <p class="text-sm md:text-base font-semibold text-white">Cryogenics</p>
+            </div>
+            <div class="skill-node bg-[#14141e] rounded-full p-4 md:p-6 shadow-xl border border-gray-800">
+                <p class="text-sm md:text-base font-semibold text-white">Device Simulation</p>
+            </div>
+            <div class="skill-node bg-[#14141e] rounded-full p-4 md:p-6 shadow-xl border border-gray-800">
+                <p class="text-sm md:text-base font-semibold text-white">Clean-room Safety</p>
+            </div>
+            <div class="skill-node bg-[#14141e] rounded-full p-4 md:p-6 shadow-xl border border-gray-800">
+                <p class="text-sm md:text-base font-semibold text-white">Programming</p>
+            </div>
+            <div class="skill-node bg-[#14141e] rounded-full p-4 md:p-6 shadow-xl border border-gray-800">
+                <p class="text-sm md:text-base font-semibold text-white">Nanofabrication</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-16 md:py-24 max-w-4xl mx-auto px-6 md:px-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-center mb-12 text-white">Publications</h2>
+        <div class="space-y-6">
+            <div class="publication-item bg-[#14141e] rounded-xl p-6 border border-gray-800">
+                <p class="text-white text-lg font-semibold">"Preserving Coulomb blockade in transport spectroscopy of quantum dots."</p>
+                <p class="text-sm text-gray-500 mt-2">V. Jangir, D. Shah, S. Samanta, <span class="font-bold text-cyan-400">S. Rastogi</span>, *Applied Physics Letters*, 125(26), 263503, Dec 2024.</p>
+                <a href="https://pubs.aip.org/aip/apl/article/125/26/263503/3328478" target="_blank" class="text-cyan-400 hover:underline mt-2 inline-block text-sm">Read Article &rarr;</a>
+            </div>
+            <div class="publication-item bg-[#14141e] rounded-xl p-6 border border-gray-800">
+                <p class="text-white text-lg font-semibold">"Experimental method for determining the atomistic details of the Quantum-well interface."</p>
+                <p class="text-sm text-gray-500 mt-2"><span class="font-bold text-cyan-400">S. Rastogi</span> et al., *QCMC Proceedings*, 2024.</p>
+                <a href="https://scholar.google.com/citations?user=IuVwAYAAAAAJ" target="_blank" class="text-cyan-400 hover:underline mt-2 inline-block text-sm">Read Article &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 max-w-4xl mx-auto px-6 md:px-12 text-center">
+        <h2 class="text-3xl md:text-5xl font-bold mb-8 text-white">Get in touch.</h2>
+        <p class="text-gray-400 mb-8 max-w-xl mx-auto">Want to discuss the future of quantum? Let's connect.</p>
+        <div class="flex flex-col items-center space-y-4 text-white">
+            <a href="mailto:aryrastogi09@gmail.com" class="flex items-center space-x-2 text-lg hover:text-cyan-400 transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span>aryrastogi09@gmail.com</span>
+            </a>
+            <a href="https://www.linkedin.com/in/siddarth-rastogi-6895171bb" target="_blank" class="flex items-center space-x-2 text-lg hover:text-cyan-400 transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.766s.784-1.766 1.75-1.766 1.75.79 1.75 1.766-.783 1.766-1.75 1.766zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+                <span>linkedin.com/in/siddarth-rastogi</span>
+            </a>
+            <p class="text-sm text-gray-500 pt-8">
+                &copy; 2024 Siddarth Rastogi. All Rights Reserved.
+            </p>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const numParticles = 30;
+            const container = document.querySelector('.hero-particle-container');
+            let particles = [];
+            const mousePos = { x: 0, y: 0 };
+
+            // Create particles
+            for (let i = 0; i < numParticles; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('hero-particle');
+                const size = Math.random() * 8 + 4; // Particle size
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${x}px`;
+                particle.style.top = `${y}px`;
+                container.appendChild(particle);
+                particles.push({
+                    element: particle,
+                    x,
+                    y,
+                    speedX: (Math.random() - 0.5) * 0.5,
+                    speedY: (Math.random() - 0.5) * 0.5,
+                });
+            }
+
+            // Animate particles
+            function animateParticles() {
+                particles.forEach(p => {
+                    p.x += p.speedX;
+                    p.y += p.speedY;
+
+                    // Keep particles within the view
+                    if (p.x < 0 || p.x > window.innerWidth) p.speedX *= -1;
+                    if (p.y < 0 || p.y > window.innerHeight) p.speedY *= -1;
+
+                    // Interaction with mouse
+                    const dx = mousePos.x - p.x;
+                    const dy = mousePos.y - p.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 200) {
+                        const repelForce = (1 - distance / 200) * 0.5;
+                        p.speedX -= (dx / distance) * repelForce;
+                        p.speedY -= (dy / distance) * repelForce;
+                    }
+                    p.element.style.transform = `translate(${p.x - p.element.offsetWidth / 2}px, ${p.y - p.element.offsetHeight / 2}px)`;
+                });
+                requestAnimationFrame(animateParticles);
+            }
+
+            window.addEventListener('mousemove', (e) => {
+                mousePos.x = e.clientX;
+                mousePos.y = e.clientY;
+            });
+
+            animateParticles();
+        });
+    </script>
+</body>
+</html>
